@@ -1,31 +1,40 @@
 package jp.ac.uryukyu.ie.e175761;
 
 public class Judge {
-    int[] ml;
-    public void judge(boolean jLeapYear(year)){
-        if(jLeapYear(year) == true) {
+
+
+    public int judge(boolean ahoo, int month){
+        int [] ml;
+        if(ahoo == true) {
             ml = new int[]{1, 4, 4, 0, 2, 5, 0, 3, 6, 1, 4, 6};
-            ano = ml[month-1];
+            return ml[month-1];
         }else{
             ml = new int[]{0, 3, 4, 0, 2, 5, 0, 3, 6, 1, 4, 6};
-            ano = ml[month-1];
+            return ml[month-1];
         }
     }
 
-    public void yJudge (int year){
-        if (year < 1900){
-
-        }else if(year < 2000){
-            etto = 0;
-        }else if(year < 2100){
-            etto =6;
+    public int yJudge (int year){
+        if(year < 2000){
+            return 0;
         }else{
-
+            return 6;
         }
     }
 
-    public int ans(){
-        answer = day + uYear + uPYear + ano + etto;
-        answer = answer % 7;
+    public boolean jLeapYear(int jYear){
+        if(jYear % 4 == 0) {
+            if(jYear % 100 == 0) {
+                if(jYear % 400 == 0) {
+                    return false;
+                } else {
+                    return true;
+                }
+            }else{
+                return false;
+            }
+        }else{
+            return true;
+        }
     }
 }
