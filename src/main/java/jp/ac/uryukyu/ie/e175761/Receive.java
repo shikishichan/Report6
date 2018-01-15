@@ -1,5 +1,4 @@
 package jp.ac.uryukyu.ie.e175761;
-import java.util.Scanner;
 
 public class Receive {
     private int day;
@@ -19,12 +18,19 @@ public class Receive {
     public int getMonth() {
         return month;
     }
-
+    /*コンスタラクタ
+    　生年月日を返す。
+     */
     public Receive(int year,int month,int day){
         this.year=year;
         this.month = month;
         this.day = day;
     }
+
+    /*計算する。
+      mainで受け取った数字とjudgeを用いて曜日を計算する。
+      そしてint型で返す。
+     */
     public int receive(){
         int uYear = getYear()/100;
         uYear = getYear() - uYear*100;
@@ -36,9 +42,4 @@ public class Receive {
         int answer = getDay() + uYear + uPYear + aaa + aaaa;
         return answer%7;
     }
-
-
 }
-
-
-
